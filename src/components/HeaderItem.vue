@@ -1,18 +1,23 @@
 <template>
   <header>
     <h1>Task Tracker</h1>
+    <ButtonItem text="Add Task" color="green"/>
   </header>
 </template>
 
 <script>
+import ButtonItem from './ButtonItem.vue'
+
 export default {
-  // eslint-disable-next-line vue/multi-word-component-names
-  name: 'Header',
+  name: 'HeaderItem',
   props: {
     title: {
       type: String,
       default: 'Hello World'
     }
+  },
+  components: {
+    ButtonItem,
   }
 }
 </script>
