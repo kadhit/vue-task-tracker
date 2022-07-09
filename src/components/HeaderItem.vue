@@ -1,7 +1,11 @@
 <template>
   <header>
     <h1>Task Tracker</h1>
-    <ButtonItem text="Add Task" color="green" />
+    <ButtonItem
+      @btn-click="$emit('toggle-add-task')"
+      :text="showAddTask ? 'Close' : 'Add Task'"
+      :color="showAddTask ? 'red' : 'green'"
+    />
   </header>
 </template>
 
@@ -14,6 +18,9 @@
       title: {
         type: String,
         default: "Hello World",
+      },
+      showAddTask: {
+        type: Boolean,
       },
     },
     components: {
